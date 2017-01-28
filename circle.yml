@@ -1,0 +1,20 @@
+machine:
+  environment:
+      DOCKER_EMAIL: 'nic.cheneweth@thoughtworks.com'
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - openssl aes-256-cbc -d -in secrets.ci -k $KEY >> ~/.circlerc
+  override:
+    - docker info
+    - bundle
+    - bundle exec rake build
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - bundle exec rake push
