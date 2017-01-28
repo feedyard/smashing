@@ -8,6 +8,11 @@ load 'rake.local' if File.exist?('rake.local')
 
 task default: %w(help)
 
+task :test do
+  puts LIBRARY
+  puts container_name
+end
+
 task :install_deps do
   sh 'gem install bundler'
   sh 'bundle install'
