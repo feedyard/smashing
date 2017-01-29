@@ -1,1 +1,9 @@
 README.md
+.ruby-version
+Gemfile.lock
+circle.yml
+rakelib/
+Rakefile
+rake.local
+secrets.*
+.gitignore
