@@ -1,3 +1,7 @@
 # Change Log
 
 ### 01-28-2017 Initial build automation
+
+### 01-28-2017 patch
+
+alpine 3.5 with apk current as of build date
