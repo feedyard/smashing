@@ -9,8 +9,7 @@ load 'rake.local' if File.exist?('rake.local')
 task default: %w(help)
 
 task :test do
-  puts LIBRARY
-  puts container_name
+  sh "docker run -d -p 80:3030 #{LIBRARY}/#{container_name}:latest; sleep 10"
 end
 
 task :install_deps do

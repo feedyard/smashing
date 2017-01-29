@@ -11,6 +11,9 @@ dependencies:
     - docker info
     - bundle
     - bundle exec rake build
+test:
+  override:
+    - rake test
 
 deployment:
   hub:
