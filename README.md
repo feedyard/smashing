@@ -1,3 +1,5 @@
+[![Docker Repository on Quay](https://quay.io/repository/feedyard/smashing/status "Docker Repository on Quay")](https://quay.io/repository/feedyard/smashing)
+
 # feedyard/smashing
 
 This dockerized version of smashing is configured to work with the feedyard radiator.
