@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bundler', '~> 1.13'
+gem 'bundler', '~> 1.14'
 gem 'rake', '~> 12.0'
 gem 'json', '~> 2.0'
 gem 'smashing', '1.0.0'

@@ -1,5 +1,6 @@
 [![Docker Repository on Quay](https://quay.io/repository/feedyard/smashing/status "Docker Repository on Quay")](https://quay.io/repository/feedyard/smashing)
 [![CircleCI](https://circleci.com/gh/feedyard/smashing.svg?style=shield)](https://circleci.com/gh/feedyard/smashing)
+[![Dependency Status](https://gemnasium.com/badges/github.com/feedyard/smashing.svg)](https://gemnasium.com/github.com/feedyard/smashing)
 
 # feedyard/smashing
 
