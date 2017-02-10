@@ -5,3 +5,5 @@
 ### 01-28-2017 patch
 
 alpine 3.5 with apk current as of build date
+
+### 02-09-2017 Fix style and spelling error
