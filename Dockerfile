@@ -2,7 +2,7 @@ FROM alpine:3.5
 # ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-linux-musl]
 # nodejs --version = v6.9.2
 
-MAINTAINER Nic Chenewth <nic.cheneweth@thoughtworks.com>
+MAINTAINER Nic Cheneweth <nic.cheneweth@thoughtworks.com>
 
 RUN apk update && apk upgrade
 RUN apk add curl wget bash ruby ruby-bundler nodejs ruby-dev g++ musl-dev make
