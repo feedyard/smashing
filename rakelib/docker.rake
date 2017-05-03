@@ -10,8 +10,6 @@ end
 desc 'tags latest as next_version'
 task :tag do
   sh "docker tag #{LIBRARY}/#{container_name}:latest #{LIBRARY}/#{container_name}:#{next_version}"
-  sh "git tag #{next_version}"
-  sh "git push --tags"
 end
 
 desc 'pushes the tagged version and latest to docker hub'
