@@ -11,3 +11,5 @@ alpine 3.5 with apk current as of build date
 ### 03-10-2017 Patch
 
 ### 05-03-2017 Patch
+
+### 06-08-2017 Patch
