@@ -1,0 +1,8 @@
+---
+name: smashing
+title: validate the smashing image configuration health
+summary: Verify installed packages and setup health
+version: 1.0.0
+maintainer: ncheneweth
+copyright: ncheneweth
+license: Apache-2.0

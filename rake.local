@@ -1,2 +1,0 @@
-REGISTRY = 'https://hub.docker.com/v2/repositories'.freeze
-LIBRARY = 'feedyard'.freeze

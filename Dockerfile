@@ -1,18 +1,34 @@
-FROM alpine:3.6
-# ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-linux-musl]
-# nodejs --version = v6.9.2
+FROM alpine:3.7
 
-MAINTAINER Nic Cheneweth <nic.cheneweth@thoughtworks.com>
+LABEL smashing.version="1.1.0" \
+      description="Smashing Dashboard gem image based on Alpine" \
+      maintainer="nic.cheneweth@thoughtworks.com"
 
-RUN apk update && apk upgrade
-RUN apk add curl wget bash ruby ruby-bundler nodejs ruby-dev g++ musl-dev make
+# default smashing port
+EXPOSE 3030
+
+# force encoding
+ENV LANG=en_US.utf8
+
+# add runtime user and group
+ARG UID=1000
+ARG GID=1000
+
+RUN \
+    # add smashing user and group first to make sure IDs get assigned consistently,
+    # regardless of other dependencies
+    addgroup -g ${GID} smashing && \
+    adduser -D -u ${UID} -s /bin/bash -G smashing smashing && \
+    apk update && apk --no-cache upgrade && \
+    apk --no-cache add tzdata curl wget bash ruby ruby-bundler nodejs ruby-dev g++ musl-dev make
 
 RUN echo "gem: --no-document" > /etc/gemrc
 RUN gem install bundler
 RUN gem install json
-RUN gem install smashing -v 1.0.0
+RUN gem install smashing -v 1.1.0
 
 # The default directory for the feedyard radiator
-RUN smashing new dashboard
+RUN smashing new dashboard && chown -R smashing:smashing dashboard/
+RUN rm dashboard/jobs
 
-# there is no CMD or other execution instructions since this image is designed to be included in the feedyard/dashboard image
+# no entrypoint defined as the image is pulled as part of building the actual dashboard container
