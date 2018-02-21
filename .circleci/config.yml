@@ -38,3 +38,6 @@ jobs:
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
             docker push $LIBRARY/$CONTAINER_NAME:latest
+            docker login -u=$FEEDYARD_QUAYIO_ROBOT_USER -p=$FEEDYARD_QUAYIO_ROBOT_USER_TOKEN quay.io
+            docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
+            docker push $LIBRARY/$CONTAINER_NAME:latest
