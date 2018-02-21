@@ -7,7 +7,7 @@ jobs:
       LIBRARY: feedyard
       CONTAINER_NAME: smashing
       VERSION: 1.1.0
-      BASH_ENV: env
+      BASH_ENV: local.env
     docker:
       - image: feedyard/circleci-remote-docker
     steps:
@@ -35,6 +35,6 @@ jobs:
       - deploy:
           name: deploy to docker hub
           command: |
-            docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
             docker push $LIBRARY/$CONTAINER_NAME:latest
