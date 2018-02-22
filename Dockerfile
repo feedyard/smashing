@@ -8,7 +8,7 @@ LABEL smashing.version="1.1.0" \
 ENV LANG=en_US.utf8
 
 RUN apk update && apk --no-cache upgrade && \
-    apk --no-cache add tzdata curl wget bash ruby ruby-bundler nodejs ruby-dev g++ musl-dev make
+    apk --no-cache add tzdata curl wget bash ruby ruby-bundler nodejs ruby-dev g++ musl-dev zlib-dev make
 
 RUN echo "gem: --no-document" > /etc/gemrc
 RUN gem install bundler json
